@@ -1,0 +1,196 @@
+# Flashcards: a term on the front, a short definition on the back.
+# "domain" must match an id in domains.yaml.
+
+# --- Cloud Concepts ---
+- id: fc-001
+  domain: cloud-concepts
+  term: Elasticity
+  definition: Automatically adding or removing resources to match demand, so you only pay for what you use.
+
+- id: fc-002
+  domain: cloud-concepts
+  term: Six advantages of cloud computing
+  definition: Trade fixed for variable expense; massive economies of scale; stop guessing capacity; increase speed and agility; stop spending money on data centres; go global in minutes.
+
+- id: fc-003
+  domain: cloud-concepts
+  term: Well-Architected Framework pillars
+  definition: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization and Sustainability.
+
+- id: fc-004
+  domain: cloud-concepts
+  term: Rehost
+  definition: "\"Lift and shift\": move an application to the cloud without changing it."
+
+- id: fc-005
+  domain: cloud-concepts
+  term: Replatform
+  definition: "\"Lift, tinker and shift\": make a few cloud optimisations (such as moving to a managed database) without changing the core architecture."
+
+- id: fc-006
+  domain: cloud-concepts
+  term: Refactor / re-architect
+  definition: Reimagine how the application is built, typically using cloud-native features, to meet needs that are hard to meet as it is.
+
+- id: fc-007
+  domain: cloud-concepts
+  term: AWS Cloud Adoption Framework (CAF)
+  definition: "Guidance organised into six perspectives: Business, People, Governance, Platform, Security and Operations."
+
+- id: fc-008
+  domain: cloud-concepts
+  term: Hybrid deployment
+  definition: Connecting cloud resources with on-premises infrastructure, for example to keep legacy systems while using cloud services.
+
+# --- Security and Compliance ---
+- id: fc-009
+  domain: security
+  term: Shared responsibility model
+  definition: AWS is responsible for security OF the cloud (facilities, hardware, global infrastructure). You are responsible for security IN the cloud (data, IAM, OS, configuration).
+
+- id: fc-010
+  domain: security
+  term: IAM role
+  definition: An identity with permissions that users, applications or AWS services assume to get temporary credentials, with no long-term keys.
+
+- id: fc-011
+  domain: security
+  term: Principle of least privilege
+  definition: Grant only the permissions needed to perform a task, and nothing more.
+
+- id: fc-012
+  domain: security
+  term: AWS Artifact
+  definition: Self-service portal for downloading AWS compliance reports (such as SOC and ISO) and accepting agreements.
+
+- id: fc-013
+  domain: security
+  term: Amazon GuardDuty
+  definition: Intelligent threat detection that analyses CloudTrail events, VPC Flow Logs and DNS logs for malicious activity.
+
+- id: fc-014
+  domain: security
+  term: AWS Shield
+  definition: Managed DDoS protection. Shield Standard is free and automatic; Shield Advanced adds extra protection and response support.
+
+- id: fc-015
+  domain: security
+  term: AWS WAF
+  definition: Web application firewall that filters HTTP(S) requests using rules, such as blocking SQL injection or specific IP addresses.
+
+- id: fc-016
+  domain: security
+  term: AWS CloudTrail
+  definition: Records API calls and account activity, providing an audit trail of who did what and when.
+
+- id: fc-017
+  domain: security
+  term: Amazon Inspector
+  definition: Automated vulnerability scanning for EC2 instances, container images and Lambda functions.
+
+- id: fc-018
+  domain: security
+  term: AWS KMS
+  definition: Key Management Service. Creates and manages the encryption keys used to protect your data across AWS services.
+
+# --- Cloud Technology and Services ---
+- id: fc-019
+  domain: technology
+  term: Region
+  definition: A physical geographic area containing multiple isolated Availability Zones.
+
+- id: fc-020
+  domain: technology
+  term: Availability Zone (AZ)
+  definition: One or more discrete data centres with redundant power, networking and connectivity within a Region.
+
+- id: fc-021
+  domain: technology
+  term: Edge location
+  definition: A site used by CloudFront (and Route 53) to cache content and serve users with low latency.
+
+- id: fc-022
+  domain: technology
+  term: Amazon EC2
+  definition: Resizable virtual servers in the cloud. You choose the instance type, operating system and pricing model.
+
+- id: fc-023
+  domain: technology
+  term: AWS Lambda
+  definition: Serverless compute that runs your code in response to events. You pay only for the compute time you use.
+
+- id: fc-024
+  domain: technology
+  term: Amazon S3
+  definition: Object storage with 11 nines of durability, organised into buckets and offered in several storage classes.
+
+- id: fc-025
+  domain: technology
+  term: Amazon EBS
+  definition: Block storage volumes that attach to a single EC2 instance, like a virtual hard drive.
+
+- id: fc-026
+  domain: technology
+  term: Amazon RDS
+  definition: Managed relational databases (such as MySQL and PostgreSQL) with automated backups, patching and Multi-AZ options.
+
+- id: fc-027
+  domain: technology
+  term: Amazon DynamoDB
+  definition: Serverless NoSQL key-value and document database with single-digit millisecond performance.
+
+- id: fc-028
+  domain: technology
+  term: Amazon VPC
+  definition: A logically isolated virtual network where you control IP ranges, subnets, route tables and gateways.
+
+- id: fc-029
+  domain: technology
+  term: Amazon CloudWatch
+  definition: Monitoring service that collects metrics and logs and triggers alarms.
+
+- id: fc-030
+  domain: technology
+  term: AWS CloudFormation
+  definition: Infrastructure as code. Describe resources in JSON or YAML templates and deploy them repeatedly.
+
+# --- Billing, Pricing and Support ---
+- id: fc-031
+  domain: billing
+  term: On-Demand Instances
+  definition: Pay for compute by the second or hour with no long-term commitment. Ideal for short-term, unpredictable workloads.
+
+- id: fc-032
+  domain: billing
+  term: Spot Instances
+  definition: Spare EC2 capacity at large discounts that AWS can reclaim with a two-minute warning. Best for fault-tolerant, flexible jobs.
+
+- id: fc-033
+  domain: billing
+  term: Savings Plans
+  definition: A 1- or 3-year commitment to a consistent amount of usage ($/hour) in exchange for lower prices.
+
+- id: fc-034
+  domain: billing
+  term: AWS Budgets
+  definition: Set custom cost or usage budgets and get alerts when actual or forecast spend exceeds them.
+
+- id: fc-035
+  domain: billing
+  term: AWS Cost Explorer
+  definition: Visualise and analyse historical costs and usage, with forecasting.
+
+- id: fc-036
+  domain: billing
+  term: AWS Pricing Calculator
+  definition: Estimate the monthly cost of an architecture before you build it.
+
+- id: fc-037
+  domain: billing
+  term: Consolidated billing
+  definition: An AWS Organizations feature that combines all member accounts into one bill and shares volume discounts.
+
+- id: fc-038
+  domain: billing
+  term: AWS Trusted Advisor
+  definition: Recommendations across cost optimisation, performance, security, fault tolerance and service limits.

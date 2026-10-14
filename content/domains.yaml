@@ -1,0 +1,31 @@
+# The four domains of the AWS Certified Cloud Practitioner exam (CLF-C02).
+# Weights are the percentage of scored content in the official exam guide.
+# The build script checks that the weights add up to 100.
+
+- id: cloud-concepts
+  number: 1
+  name: Cloud Concepts
+  weight: 24
+  colour: "#3b82f6"
+  summary: Benefits of the AWS Cloud, Well-Architected design principles, migration strategies and cloud economics.
+
+- id: security
+  number: 2
+  name: Security and Compliance
+  weight: 30
+  colour: "#ef4444"
+  summary: The shared responsibility model, IAM, security services and where to find compliance information.
+
+- id: technology
+  number: 3
+  name: Cloud Technology and Services
+  weight: 34
+  colour: "#10b981"
+  summary: Global infrastructure, compute, storage, databases, networking and the core AWS services.
+
+- id: billing
+  number: 4
+  name: Billing, Pricing and Support
+  weight: 12
+  colour: "#a855f7"
+  summary: Pricing models, cost management tools, AWS Organizations and the support plans.

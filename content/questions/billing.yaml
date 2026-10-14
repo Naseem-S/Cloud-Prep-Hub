@@ -1,0 +1,111 @@
+# Domain 4: Billing, Pricing and Support
+
+- id: bill-001
+  question: A company runs a steady workload 24/7 and can commit to consistent usage for 1 or 3 years. Which option offers the biggest savings over On-Demand?
+  options:
+    - On-Demand Instances
+    - Savings Plans
+    - Dedicated Hosts
+    - Spot Instances with no commitment
+  answer: 1
+  explanation: Savings Plans (like Reserved Instances) give a significant discount compared with On-Demand pricing in exchange for a 1- or 3-year usage commitment. They suit steady, predictable workloads.
+
+- id: bill-002
+  question: Which EC2 pricing option is best for flexible, fault-tolerant batch jobs that can handle interruptions, at the lowest cost?
+  options:
+    - On-Demand Instances
+    - Dedicated Instances
+    - Spot Instances
+    - Savings Plans
+  answer: 2
+  explanation: Spot Instances use spare EC2 capacity at steep discounts, but AWS can reclaim them with a two-minute warning, so workloads must tolerate interruptions.
+
+- id: bill-003
+  question: Which tool lets you visualise, understand and analyse your AWS costs and usage over time?
+  options:
+    - AWS Pricing Calculator
+    - AWS Cost Explorer
+    - AWS Artifact
+    - AWS Marketplace
+  answer: 1
+  explanation: AWS Cost Explorer shows your historical and current costs with charts and filters, and it can forecast future spend.
+
+- id: bill-004
+  question: A manager wants an email alert when the monthly AWS bill is forecast to exceed a set amount. Which service should they use?
+  options:
+    - AWS Budgets
+    - AWS Cost Explorer
+    - AWS CloudTrail
+    - AWS Trusted Advisor
+  answer: 0
+  explanation: AWS Budgets lets you set custom cost and usage budgets and sends alerts when actual or forecast amounts exceed your thresholds.
+
+- id: bill-005
+  question: Which tool estimates the cost of an AWS architecture before you build it?
+  options:
+    - AWS Cost Explorer
+    - AWS Budgets
+    - AWS Pricing Calculator
+    - AWS Cost and Usage Report
+  answer: 2
+  explanation: AWS Pricing Calculator lets you model your planned services and configurations to estimate monthly costs before deploying anything.
+
+- id: bill-006
+  question: Which service gives recommendations across cost optimisation, security, fault tolerance, performance and service limits?
+  options:
+    - AWS Trusted Advisor
+    - Amazon Inspector
+    - AWS Config
+    - AWS Health Dashboard
+  answer: 0
+  explanation: AWS Trusted Advisor inspects your environment and recommends best-practice improvements across several categories, including cost optimisation and security.
+
+- id: bill-007
+  question: A company has many AWS accounts and wants one bill and shared volume discounts. Which feature should it use?
+  options:
+    - Consolidated billing in AWS Organizations
+    - AWS Cost Explorer
+    - Cost allocation tags
+    - AWS Marketplace
+  answer: 0
+  explanation: Consolidated billing in AWS Organizations combines usage across all member accounts into one bill, so the organisation can reach volume pricing tiers sooner.
+
+- id: bill-008
+  question: Which type of data transfer is generally free in AWS?
+  options:
+    - Data transferred out to the internet
+    - Data transferred in from the internet
+    - Data transferred between Regions
+    - All data transfer is always free
+  answer: 1
+  explanation: Inbound data transfer from the internet into AWS is generally free. Data transferred out to the internet, and between Regions, is usually charged.
+
+- id: bill-009
+  question: Where can customers find, buy and deploy third-party software that runs on AWS?
+  options:
+    - AWS Artifact
+    - AWS Marketplace
+    - AWS Service Catalog
+    - AWS Partner Network
+  answer: 1
+  explanation: AWS Marketplace is a curated digital catalogue where you can find, buy and quickly deploy third-party software, data and services.
+
+- id: bill-010
+  question: A company wants to see costs broken down by project and department. What should it apply to its resources?
+  options:
+    - Security groups
+    - IAM policies
+    - Cost allocation tags
+    - Service quotas
+  answer: 2
+  explanation: Cost allocation tags are key-value labels you activate for billing, letting you organise and track costs by project, team or department.
+
+- id: bill-011
+  question: Which AWS Support plan is included with every AWS account at no extra cost?
+  options:
+    - Basic
+    - Developer
+    - Business
+    - Enterprise
+  answer: 0
+  explanation: Basic Support is included for all customers and covers account and billing questions, documentation, whitepapers, re:Post and core Trusted Advisor checks.

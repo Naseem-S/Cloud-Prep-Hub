@@ -1,0 +1,121 @@
+# Domain 2: Security and Compliance
+
+- id: sec-001
+  question: Under the AWS shared responsibility model, which task is the customer's responsibility?
+  options:
+    - Physical security of AWS data centres
+    - Patching the guest operating system on Amazon EC2 instances
+    - Maintaining the hypervisor
+    - Replacing failed networking hardware
+  answer: 1
+  explanation: For EC2 (infrastructure as a service), the customer manages the guest operating system, including updates and security patches. AWS manages the hardware, hypervisor and facilities.
+
+- id: sec-002
+  question: Under the shared responsibility model, which is AWS responsible for?
+  options:
+    - Configuring security groups
+    - Encrypting customer data stored in Amazon S3
+    - Security of the physical facilities that run AWS services
+    - Managing IAM users and their permissions
+  answer: 2
+  explanation: AWS is responsible for security "of" the cloud, which includes the physical facilities, hardware and global infrastructure. Customers are responsible for security "in" the cloud.
+
+- id: sec-003
+  question: Where can a customer download AWS compliance reports such as SOC and ISO certifications?
+  options:
+    - AWS Artifact
+    - AWS Trusted Advisor
+    - Amazon Inspector
+    - AWS Config
+  answer: 0
+  explanation: AWS Artifact is a self-service portal for on-demand access to AWS security and compliance reports and select online agreements.
+
+- id: sec-004
+  question: What is a best practice for the AWS account root user?
+  options:
+    - Use it for everyday administrative tasks
+    - Share its credentials with the operations team
+    - Enable MFA and use it only for tasks that require it
+    - Create access keys for it to use in scripts
+  answer: 2
+  explanation: The root user has unrestricted access. Protect it with multi-factor authentication (MFA) and use it only for the few tasks that require root, such as changing account settings.
+
+- id: sec-005
+  question: An application on an EC2 instance needs to read objects from Amazon S3. What is the most secure way to grant access?
+  options:
+    - Store an IAM user's access keys on the instance
+    - Attach an IAM role to the instance
+    - Make the S3 bucket public
+    - Use the root user's credentials
+  answer: 1
+  explanation: An IAM role provides temporary credentials that rotate automatically, so no long-term access keys need to be stored on the instance.
+
+- id: sec-006
+  question: Which AWS service provides protection against distributed denial-of-service (DDoS) attacks, with a standard tier at no extra cost?
+  options:
+    - AWS WAF
+    - Amazon GuardDuty
+    - AWS Shield
+    - Amazon Macie
+  answer: 2
+  explanation: AWS Shield Standard is automatically enabled for all AWS customers at no additional charge. Shield Advanced adds extra protection and 24/7 response support.
+
+- id: sec-007
+  question: Which service continuously analyses logs such as AWS CloudTrail events, VPC Flow Logs and DNS logs to detect threats?
+  options:
+    - Amazon GuardDuty
+    - Amazon Inspector
+    - AWS Artifact
+    - AWS Shield
+  answer: 0
+  explanation: Amazon GuardDuty is a threat detection service that uses machine learning and threat intelligence to identify malicious or unauthorised activity.
+
+- id: sec-008
+  question: A security team needs a record of which user made which API call, and when, in their AWS account. Which service provides this?
+  options:
+    - Amazon CloudWatch
+    - AWS CloudTrail
+    - AWS Config
+    - AWS X-Ray
+  answer: 1
+  explanation: AWS CloudTrail records API calls and account activity, giving you an audit trail of who did what, from where and when.
+
+- id: sec-009
+  question: Which service automatically scans EC2 instances and container images for software vulnerabilities?
+  options:
+    - Amazon Macie
+    - Amazon Inspector
+    - AWS Trusted Advisor
+    - Amazon Detective
+  answer: 1
+  explanation: Amazon Inspector is an automated vulnerability management service that scans workloads for software vulnerabilities and unintended network exposure.
+
+- id: sec-010
+  question: What does the principle of least privilege mean?
+  options:
+    - Give every user administrator access to save time
+    - Grant only the permissions required to perform a task
+    - Use the fewest possible IAM users in an account
+    - Allow access only during business hours
+  answer: 1
+  explanation: Least privilege means granting only the permissions needed to do a job and nothing more, which limits the damage if credentials are misused.
+
+- id: sec-011
+  question: Which service uses machine learning to discover and protect sensitive data, such as personal information, stored in Amazon S3?
+  options:
+    - Amazon Macie
+    - Amazon GuardDuty
+    - AWS Key Management Service (AWS KMS)
+    - AWS Secrets Manager
+  answer: 0
+  explanation: Amazon Macie automatically discovers sensitive data such as personally identifiable information (PII) in S3 and alerts you to risks.
+
+- id: sec-012
+  question: Which service can block web requests that contain common attacks such as SQL injection or cross-site scripting?
+  options:
+    - AWS Shield Standard
+    - Network ACLs
+    - AWS WAF
+    - Amazon Inspector
+  answer: 2
+  explanation: AWS WAF is a web application firewall that lets you create rules to filter web traffic based on conditions such as SQL injection or cross-site scripting patterns.

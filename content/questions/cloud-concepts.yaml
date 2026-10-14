@@ -1,0 +1,103 @@
+# Domain 1: Cloud Concepts
+# Each question needs: id, question, options (4), answer (0-3, the index of the
+# correct option), explanation. Run `pytest` after editing to check your work.
+
+- id: cc-001
+  question: Which of these is one of the six advantages of cloud computing that AWS describes?
+  options:
+    - Trade variable expense for fixed expense
+    - Trade fixed expense for variable expense
+    - Guess your infrastructure capacity needs up front
+    - Spend more money running and maintaining data centres
+  answer: 1
+  explanation: Instead of investing heavily in data centres before you know how you'll use them, you pay only when you consume computing resources. That is trading fixed (capital) expense for variable (operational) expense.
+
+- id: cc-002
+  question: Which pillar of the AWS Well-Architected Framework focuses on a workload recovering from failures and meeting demand?
+  options:
+    - Performance Efficiency
+    - Operational Excellence
+    - Reliability
+    - Cost Optimization
+  answer: 2
+  explanation: The Reliability pillar covers a workload's ability to perform its intended function correctly and consistently, including recovering from infrastructure or service disruptions.
+
+- id: cc-003
+  question: AWS can offer lower pay-as-you-go prices because usage from many customers is aggregated. Which cloud benefit is this?
+  options:
+    - Benefit from massive economies of scale
+    - Increase speed and agility
+    - Go global in minutes
+    - Stop guessing capacity
+  answer: 0
+  explanation: Because usage from hundreds of thousands of customers is aggregated in the cloud, AWS achieves higher economies of scale, which translates into lower prices.
+
+- id: cc-004
+  question: A company moves an application to Amazon EC2 without changing its code or architecture. Which migration strategy is this?
+  options:
+    - Refactor
+    - Replatform
+    - Repurchase
+    - Rehost
+  answer: 3
+  explanation: Rehosting, often called "lift and shift", moves an application to the cloud as it is, with no changes to the code.
+
+- id: cc-005
+  question: A company replaces its self-hosted CRM with a software-as-a-service (SaaS) CRM product. Which migration strategy is this?
+  options:
+    - Repurchase
+    - Retain
+    - Relocate
+    - Rehost
+  answer: 0
+  explanation: Repurchasing ("drop and shop") means moving to a different product, typically a SaaS offering, instead of migrating the existing application.
+
+- id: cc-006
+  question: A company keeps some workloads in its own data centre and connects them to resources running in AWS. Which deployment model is this?
+  options:
+    - Public cloud
+    - Hybrid
+    - Private cloud (on-premises)
+    - Multi-tenant
+  answer: 1
+  explanation: A hybrid deployment connects cloud-based resources with infrastructure that is not in the cloud, such as an on-premises data centre.
+
+- id: cc-007
+  question: Which perspective of the AWS Cloud Adoption Framework (AWS CAF) focuses on culture, organisational change and building cloud skills?
+  options:
+    - Governance
+    - Platform
+    - People
+    - Operations
+  answer: 2
+  explanation: The People perspective bridges technology and business, helping organisations evolve their culture, structure, leadership and workforce skills for the cloud.
+
+- id: cc-008
+  question: An online shop's traffic triples during a sale and then drops back. Which cloud concept lets its resources automatically grow and shrink with demand?
+  options:
+    - Durability
+    - Elasticity
+    - High availability
+    - Fault isolation
+  answer: 1
+  explanation: Elasticity is the ability to acquire resources as you need them and release them when you no longer need them, so capacity follows demand.
+
+- id: cc-009
+  question: Which Well-Architected pillar focuses on minimising the environmental impact of running cloud workloads?
+  options:
+    - Cost Optimization
+    - Sustainability
+    - Performance Efficiency
+    - Operational Excellence
+  answer: 1
+  explanation: The Sustainability pillar focuses on reducing energy consumption and improving efficiency across all components of a workload.
+
+- id: cc-010
+  question: A start-up deploys its application to users in Europe, Asia and North America in a single afternoon. Which cloud advantage does this show?
+  options:
+    - Go global in minutes
+    - Stop guessing capacity
+    - Economies of scale
+    - Trade fixed expense for variable expense
+  answer: 0
+  explanation: AWS Regions around the world let you deploy applications close to your users quickly, providing lower latency at minimal cost.

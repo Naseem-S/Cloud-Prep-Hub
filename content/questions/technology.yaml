@@ -1,0 +1,141 @@
+# Domain 3: Cloud Technology and Services
+
+- id: tech-001
+  question: What is an AWS Availability Zone?
+  options:
+    - A single server rack inside an AWS data centre
+    - One or more discrete data centres with redundant power, networking and connectivity in a Region
+    - A geographic area that contains several AWS Regions
+    - A site that caches content close to end users
+  answer: 1
+  explanation: Each Region contains multiple isolated Availability Zones. An AZ is one or more discrete data centres with redundant power, networking and connectivity.
+
+- id: tech-002
+  question: Which part of the AWS global infrastructure does Amazon CloudFront use to cache content close to users?
+  options:
+    - Availability Zones
+    - Regions
+    - Edge locations
+    - Local Zones
+  answer: 2
+  explanation: CloudFront delivers content through a worldwide network of edge locations, caching copies close to viewers to reduce latency.
+
+- id: tech-003
+  question: Which service provides object storage designed for 99.999999999% (11 nines) durability?
+  options:
+    - Amazon EBS
+    - Amazon S3
+    - Amazon EFS
+    - Amazon RDS
+  answer: 1
+  explanation: Amazon S3 is object storage designed for 11 nines of durability by storing data redundantly across multiple devices and facilities.
+
+- id: tech-004
+  question: A company must keep compliance records for 10 years and rarely accesses them. Which is the lowest-cost storage option?
+  options:
+    - S3 Standard
+    - S3 Standard-Infrequent Access
+    - S3 Glacier Deep Archive
+    - Amazon EBS gp3 volumes
+  answer: 2
+  explanation: S3 Glacier Deep Archive is the lowest-cost S3 storage class, designed for long-term retention of data accessed once or twice a year.
+
+- id: tech-005
+  question: Which service runs code in response to events without provisioning or managing servers?
+  options:
+    - Amazon EC2
+    - AWS Lambda
+    - Amazon Lightsail
+    - AWS Elastic Beanstalk
+  answer: 1
+  explanation: AWS Lambda is a serverless compute service. You upload code, it runs in response to events, and you pay only for the compute time used.
+
+- id: tech-006
+  question: Which fully managed database service is a serverless NoSQL key-value and document database?
+  options:
+    - Amazon RDS
+    - Amazon Aurora
+    - Amazon DynamoDB
+    - Amazon Redshift
+  answer: 2
+  explanation: Amazon DynamoDB is a serverless NoSQL database that delivers single-digit millisecond performance at any scale.
+
+- id: tech-007
+  question: Which service runs relational databases such as MySQL and PostgreSQL, with automated backups and patching?
+  options:
+    - Amazon RDS
+    - Amazon DynamoDB
+    - Amazon ElastiCache
+    - Amazon Neptune
+  answer: 0
+  explanation: Amazon RDS (Relational Database Service) manages common database admin tasks such as provisioning, patching and backups for engines including MySQL, PostgreSQL and others.
+
+- id: tech-008
+  question: Which AWS service is a scalable Domain Name System (DNS) web service?
+  options:
+    - Amazon CloudFront
+    - Amazon Route 53
+    - AWS Direct Connect
+    - Amazon VPC
+  answer: 1
+  explanation: Amazon Route 53 is a highly available DNS service that routes users to applications by translating domain names into IP addresses.
+
+- id: tech-009
+  question: Which service provides block-level storage volumes that attach to Amazon EC2 instances?
+  options:
+    - Amazon S3
+    - Amazon EBS
+    - Amazon S3 Glacier
+    - AWS Storage Gateway
+  answer: 1
+  explanation: Amazon Elastic Block Store (EBS) provides block storage volumes for EC2 instances, similar to a hard drive attached to a server.
+
+- id: tech-010
+  question: Which service automatically distributes incoming application traffic across multiple targets such as EC2 instances?
+  options:
+    - Amazon Route 53
+    - Elastic Load Balancing
+    - Amazon EC2 Auto Scaling
+    - AWS Global Accelerator
+  answer: 1
+  explanation: Elastic Load Balancing spreads incoming traffic across multiple targets in one or more Availability Zones, improving availability.
+
+- id: tech-011
+  question: Which service lets you define and provision AWS infrastructure as code using templates?
+  options:
+    - AWS CloudFormation
+    - AWS Config
+    - AWS Systems Manager
+    - AWS CodeDeploy
+  answer: 0
+  explanation: AWS CloudFormation lets you model infrastructure in JSON or YAML templates and provision it consistently and repeatedly.
+
+- id: tech-012
+  question: Which service collects metrics and logs and can trigger alarms, for example when CPU usage is too high?
+  options:
+    - AWS CloudTrail
+    - Amazon CloudWatch
+    - AWS Trusted Advisor
+    - AWS Health Dashboard
+  answer: 1
+  explanation: Amazon CloudWatch monitors resources and applications by collecting metrics and logs, and it can raise alarms or trigger actions based on thresholds.
+
+- id: tech-013
+  question: Which service provides a dedicated private network connection from an on-premises data centre to AWS?
+  options:
+    - AWS Site-to-Site VPN
+    - AWS Direct Connect
+    - Amazon CloudFront
+    - Internet gateway
+  answer: 1
+  explanation: AWS Direct Connect establishes a dedicated private network connection that does not travel over the public internet. A Site-to-Site VPN, by contrast, runs encrypted over the internet.
+
+- id: tech-014
+  question: Which service lets you launch AWS resources in a logically isolated virtual network that you define?
+  options:
+    - Amazon VPC
+    - AWS Outposts
+    - Amazon Route 53
+    - AWS Transit Gateway
+  answer: 0
+  explanation: Amazon Virtual Private Cloud (VPC) gives you a logically isolated section of the AWS Cloud with control over IP ranges, subnets, route tables and gateways.
