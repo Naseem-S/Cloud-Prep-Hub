@@ -3,9 +3,9 @@
 **Free, interactive study site for the AWS Certified Cloud Practitioner (CLF-C02) exam.**
 Built by two engineers returning to IT, as a hands-on project in team Git workflows, Python automation and CI/CD.
 
-🔗 **Live site:** https://naseem-ie.github.io/cloud-prep-hub/
+🔗 **Live site:** https://naseem-s.github.io/Cloud-Prep-Hub/
 
-![CI/CD](https://github.com/naseem-ie/cloud-prep-hub/actions/workflows/ci-cd.yml/badge.svg)
+![CI/CD](https://github.com/Naseem-S/Cloud-Prep-Hub/actions/workflows/ci-cd.yml/badge.svg)
 
 ---
 
@@ -13,12 +13,12 @@ Built by two engineers returning to IT, as a hands-on project in team Git workfl
 
 | Page | What it does |
 |---|---|
-| **Home** | Exam readiness score (weighted by domain), domain overview, exam facts |
+| **Home** | Exam readiness score (weighted by domain), domain overview, exam facts, and export/import of progress to move between devices |
 | **Quiz** | Practice mode with instant explanations, or a timed exam simulation; per-domain score breakdown and answer review; retry incorrect questions |
 | **Flashcards** | 3D flip cards, filter by domain, shuffle, "Got it / Still learning" tracking, keyboard shortcuts |
 | **Notes** | Notes for all four domains, full-text search with highlighting, contents list with scroll-spy, completion tracking |
 
-Also: light/dark theme, mobile-friendly layout, and progress saved in the browser (no account needed).
+Also: light/dark theme, mobile-friendly layout, and progress saved in the browser (no account needed). Progress can be exported to a JSON file and imported on another device.
 
 ## How it works
 
@@ -46,8 +46,8 @@ flowchart LR
 ## Run it locally
 
 ```bash
-git clone https://github.com/naseem-ie/cloud-prep-hub.git
-cd cloud-prep-hub
+git clone https://github.com/Naseem-S/Cloud-Prep-Hub.git
+cd Cloud-Prep-Hub
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
