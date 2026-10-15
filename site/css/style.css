@@ -636,6 +636,27 @@ main {
   margin-bottom: 6px;
 }
 
+.progress-tools {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.progress-tools p {
+  font-size: 0.82rem;
+  margin: 0 0 10px;
+}
+
+.progress-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.progress-actions #reset-progress {
+  margin-left: auto;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -148,6 +148,76 @@ export function calculateReadiness(domains, questions, flashcards) {
   return { overall, perDomain };
 }
 
+// ---------- Export / import progress ----------
+// Everything a learner has done is kept under these keys in localStorage.
+export const PROGRESS_KEYS = ["answers", "known", "notesRead", "quizHistory"];
+const EXPORT_APP_ID = "cloud-prep-hub";
+const EXPORT_VERSION = 1;
+
+// Download all progress as a JSON file the learner can keep or move to another device.
+export function exportProgress() {
+  const data = Object.fromEntries(PROGRESS_KEYS.map((key) => [key, store.get(key, null)]));
+  const payload = {
+    app: EXPORT_APP_ID,
+    version: EXPORT_VERSION,
+    exportedAt: new Date().toISOString(),
+    data,
+  };
+
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `cloud-prep-hub-progress-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+// Check that an imported file really is Cloud Prep Hub progress before using it.
+export function validateProgress(payload) {
+  if (!payload || payload.app !== EXPORT_APP_ID || typeof payload.data !== "object" || payload.data === null) {
+    throw new Error("This file isn't a Cloud Prep Hub progress export.");
+  }
+  if (payload.version > EXPORT_VERSION) {
+    throw new Error("This file was made by a newer version of the site. Refresh the page and try again.");
+  }
+  const { answers, known, notesRead, quizHistory } = payload.data;
+  const isPlainObject = (v) => v === null || (typeof v === "object" && !Array.isArray(v));
+  const isArray = (v) => v === null || Array.isArray(v);
+  if (!isPlainObject(answers) || !isArray(known) || !isArray(notesRead) || !isArray(quizHistory)) {
+    throw new Error("The progress file looks damaged, so nothing was imported.");
+  }
+  return payload;
+}
+
+// Read a file chosen by the learner and replace the saved progress with it.
+export async function importProgress(file) {
+  let payload;
+  try {
+    payload = JSON.parse(await file.text());
+  } catch {
+    throw new Error("That file couldn't be read. Choose the .json file you exported.");
+  }
+  validateProgress(payload);
+  for (const key of PROGRESS_KEYS) {
+    const value = payload.data[key];
+    if (value === null || value === undefined) {
+      try { localStorage.removeItem(STORAGE_PREFIX + key); } catch { /* ignore */ }
+    } else {
+      store.set(key, value);
+    }
+  }
+  return payload;
+}
+
+export function resetProgress() {
+  PROGRESS_KEYS.forEach((key) => {
+    try { localStorage.removeItem(STORAGE_PREFIX + key); } catch { /* ignore */ }
+  });
+}
+
 // ---------- Header and footer ----------
 function initTheme() {
   const button = document.querySelector(".theme-btn");

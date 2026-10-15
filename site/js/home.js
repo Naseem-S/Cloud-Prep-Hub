@@ -1,6 +1,7 @@
 // Home page: stats, domain cards and the readiness ring.
 import {
   loadData, showLoadError, countUp, setRing, calculateReadiness, escapeHtml, toast,
+  exportProgress, importProgress, resetProgress,
 } from "./app.js";
 
 async function init() {
@@ -13,10 +14,34 @@ async function init() {
     renderDomains(grid, domains, meta);
     renderReadiness(domains, questions, flashcards);
 
+    const refresh = () => renderReadiness(domains, questions, flashcards);
+
+    document.getElementById("export-progress").addEventListener("click", () => {
+      exportProgress();
+      toast("Progress exported. Check your downloads");
+    });
+
+    const fileInput = document.getElementById("import-file");
+    document.getElementById("import-progress").addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files[0];
+      fileInput.value = ""; // so choosing the same file again still triggers "change"
+      if (!file) return;
+      if (!confirm("Importing replaces the progress saved in this browser. Continue?")) return;
+      try {
+        const payload = await importProgress(file);
+        refresh();
+        const date = new Date(payload.exportedAt).toLocaleDateString("en-IE", { day: "numeric", month: "short", year: "numeric" });
+        toast(`Progress imported (exported ${date})`);
+      } catch (error) {
+        toast(error.message);
+      }
+    });
+
     document.getElementById("reset-progress").addEventListener("click", () => {
-      if (!confirm("Reset all your quiz, flashcard and notes progress?")) return;
-      ["answers", "known", "notesRead", "quizHistory"].forEach((key) => localStorage.removeItem(`cph.${key}`));
-      renderReadiness(domains, questions, flashcards);
+      if (!confirm("Reset all your quiz, flashcard and notes progress? Export it first if you want a backup.")) return;
+      resetProgress();
+      refresh();
       toast("Progress reset");
     });
   } catch (error) {

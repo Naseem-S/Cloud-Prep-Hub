@@ -74,8 +74,20 @@
             </div>
           </div>
           <div class="domain-progress" id="domain-progress"></div>
-          <div style="text-align:right;margin-top:14px">
-            <button class="btn btn-ghost btn-sm" id="reset-progress" type="button">Reset progress</button>
+          <div class="progress-tools">
+            <p class="muted">Progress is saved in this browser. Export it to back it up or move it to another device.</p>
+            <div class="progress-actions">
+              <button class="btn btn-secondary btn-sm" id="export-progress" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                Export
+              </button>
+              <button class="btn btn-secondary btn-sm" id="import-progress" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9M7 14l5-5 5 5M5 3h14"/></svg>
+                Import
+              </button>
+              <button class="btn btn-ghost btn-sm" id="reset-progress" type="button">Reset</button>
+              <input type="file" id="import-file" accept=".json,application/json" hidden>
+            </div>
           </div>
         </div>
       </div>
@@ -149,36 +161,12 @@
       <p class="muted" style="font-size:.85rem;margin-top:12px">Always check the <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener">official AWS exam page</a> for the latest details before booking.</p>
     </section>
 
-    <!-- ===== Under the hood ===== -->
-    <section class="section container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Under the hood</div>
-          <h2>Built like a real engineering project</h2>
-          <p>Content is written in YAML and Markdown, validated by Python, tested with pytest and deployed automatically by GitHub Actions.</p>
-        </div>
-      </div>
-      <div class="steps">
-        <div class="card step">
-          <h3>🐍 Python pipeline</h3>
-          <p>A build script validates every question and turns the content into the JSON this site loads.</p>
-        </div>
-        <div class="card step">
-          <h3>✅ Automated tests</h3>
-          <p>pytest checks the content on every pull request, so broken questions never reach the live site.</p>
-        </div>
-        <div class="card step">
-          <h3>🚀 CI/CD</h3>
-          <p>GitHub Actions tests, builds and deploys to GitHub Pages on every merge to main.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>&copy; <span id="year"></span> Cloud Prep Hub · Not affiliated with Amazon Web Services</span>
-      <span><span id="build-info" class="mono"></span> · <a href="https://github.com/naseem-ie/cloud-prep-hub" target="_blank" rel="noopener">Source on GitHub</a></span>
+      <span><span id="build-info" class="mono"></span> · <a href="https://github.com/Naseem-S/Cloud-Prep-Hub" target="_blank" rel="noopener">Source on GitHub</a></span>
     </div>
   </footer>
 
